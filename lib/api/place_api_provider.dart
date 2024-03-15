@@ -270,6 +270,7 @@ result["result"]
     final Map<String, dynamic> parameters = <String, dynamic>{
       'place_id': placeId,
       'fields': 'name,formatted_address,address_component,geometry',
+      'language': language ?? 'en-US',
       'key': mapsApiKey,
       'sessiontoken': sessionToken
     };
