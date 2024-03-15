@@ -356,7 +356,7 @@ result["result"]
         if (place.streetNumber != null) {
           place.streetAddress ??= '${place.streetNumber} ${place.streetShort}';
           place.formattedAddress ??=
-              '${place.streetNumber} ${place.streetShort}, ${place.city}, ${place.stateShort} ${place.zipCode}';
+              '${place.streetNumber} ${place.streetShort}, ${place.city}, ${place.stateShort}';
           place.formattedAddressZipPlus4 ??=
               '${place.streetNumber} ${place.streetShort}, ${place.city}, ${place.stateShort} ${place.zipCodePlus4}';
         }
