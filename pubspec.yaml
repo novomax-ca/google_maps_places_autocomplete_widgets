@@ -1,6 +1,6 @@
 name: google_maps_places_autocomplete_widgets
 description: TextField and TextFormField widgets using Google Maps Places Api for Address Autocompletion.
-version: 1.2.2
+version: 1.2.3
 repository: https://github.com/timmaffett/google_maps_places_autocomplete_widgets
 
 environment:
@@ -10,8 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  uuid: ^4.2.1
-  http: ^1.1.0
+  uuid: ^4.3.3
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
