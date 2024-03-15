@@ -308,8 +308,8 @@ result["result"]
 
         // build result
         final place = Place();
+        var ukrAddress = '';
 
-        place.formattedAddress = result['result']['formatted_address'];
         place.name = result['result']['name'];
         place.lat = result['result']['geometry']['location']['lat'] as double;
         place.lng = result['result']['geometry']['location']['lng'] as double;
@@ -332,6 +332,7 @@ result["result"]
           }
           if (type.contains('locality')) {
             place.city = component['long_name'];
+            ukrAddress += component['long_name'];
           }
           if (type.contains('administrative_area_level_2')) {
             place.county = component['long_name'];
@@ -339,6 +340,7 @@ result["result"]
           if (type.contains('administrative_area_level_1')) {
             place.state = component['long_name'];
             place.stateShort = component['short_name'];
+            ukrAddress += ', ${component['long_name']}';
           }
           if (type.contains('country')) {
             place.country = component['long_name'];
@@ -349,6 +351,12 @@ result["result"]
           if (type.contains('postal_code_suffix')) {
             place.zipCodeSuffix = component['long_name'];
           }
+        }
+
+        if (language == 'uk-UA') {
+          place.formattedAddress = ukrAddress;
+        } else {
+          place.formattedAddress = result['result']['formatted_address'];
         }
 
         place.zipCodePlus4 ??=
